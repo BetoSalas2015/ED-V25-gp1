@@ -10,8 +10,11 @@
 // Declaración de Funciones
 int main()  // Punto de entrada
 { 
+    const float PI = 3.14159; 
+    int edad;
+    edad = 55;
     cls; 
-    printf("\t\t\tESTADO DE RESULTADOS\n");  
+    printf("Edad en b10 = %d, b8 = %o, b16 = %x, char = %c\n", edad, edad, edad, edad);  
 
     pausa; 
 }
