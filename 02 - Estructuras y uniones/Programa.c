@@ -7,15 +7,21 @@
 #define cls system("cls")
 
 // Declaraciones globales
-struct Persona              // Definición de la estructura Persona
+struct Persona
+{
+    char Nombre[15];
+    char Apellido[15];
+};
+
+struct Datos              // Definición de la estructura Persona
 { 
-    char nombre[30];        //  Campos de la estructura
+    struct Persona nombrePersona;        //  Campos de la estructura
     int edad; 
     float altura; 
     char sexo;
 };
 
-typedef struct Persona datos;  // Formalización del tipo de datos "datos"
+typedef struct Datos datos;  // Formalización del tipo de datos "datos"
 
 // Declaración de Funciones
 int main()  // Punto de entrada
@@ -31,19 +37,22 @@ int main()  // Punto de entrada
     printf("El tamaño de double es: %d bytes\n", sizeof(double) );*/
 
     printf("Dame el nombre: ");
-    gets(miPersona.nombre);
+    gets(miPersona.nombrePersona.Nombre);
+    printf("Dame el apellido: ");
+    gets(miPersona.nombrePersona.Apellido);
     printf("Dame la edad: ");
     scanf("%d", &miPersona.edad);
     printf("Dame la altura: ");
     scanf("%f", &miPersona.altura);
     printf("Dame el sexo: ");
+    fflush(stdin);
     scanf("%c", &miPersona.sexo);
     
-    printf("El nombre de la persona es %s\n", miPersona.nombre);
+    printf("El nombre de la persona es %s %s\n", miPersona.nombrePersona.Nombre, miPersona.nombrePersona.Apellido);
     printf("La edad de la persona es %d\n", miPersona.edad);
     printf("La altura de la persona es %f\n", miPersona.altura);   
-    fflush(stdin);
     printf("El sexo de la persona es %c\n", miPersona.sexo);
+
     pausa; 
 }
 
