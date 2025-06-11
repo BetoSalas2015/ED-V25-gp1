@@ -7,7 +7,7 @@
 #define cls system("cls")
 
 // Declaraciones globales
-struct Persona
+union Persona
 {
     char Nombre[15];
     char Apellido[15];
@@ -15,7 +15,7 @@ struct Persona
 
 struct Datos              // Definición de la estructura Persona
 { 
-    struct Persona nombrePersona;        //  Campos de la estructura
+    union Persona nombrePersona;        //  Campos de la estructura
     int edad; 
     float altura; 
     char sexo;
@@ -36,7 +36,8 @@ int main()  // Punto de entrada
     printf("El tamaño de float es: %d bytes\n", sizeof(float) );
     printf("El tamaño de double es: %d bytes\n", sizeof(double) );*/
 
-    
+    strcpy(miPersona[2].nombrePersona.Nombre, "Juan");
+    strcpy(miPersona[2].nombrePersona.Apellido, "Perez");
     printf("Dame el nombre: ");
     gets(miPersona[2].nombrePersona.Nombre);
     printf("Dame el apellido: ");
