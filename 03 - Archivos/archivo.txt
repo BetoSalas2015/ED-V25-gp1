@@ -1,0 +1,3 @@
+El archivo se genero satisfactoriamente
+Yas puedo escribir en el
+Esta es otra linea de texto.
