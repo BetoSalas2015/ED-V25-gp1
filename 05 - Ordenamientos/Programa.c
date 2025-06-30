@@ -6,7 +6,7 @@
 
 #define pausa system("pause")   // Para pausa en pantalla
 #define cls system("cls")       // Para limpiar pantalla
-#define SIZE 10                 // Tamaño de mi arreglo
+#define SIZE 10000                 // Tamaño de mi arreglo
 #define MAXRAND 5000            // Límite de los números pseudo-aleatorios
 
 void imprime_arreglo(int arreglo[])
@@ -18,6 +18,10 @@ void imprime_arreglo(int arreglo[])
 }
 
 //  Programe función de ordenamiento aquí
+void burbuja(int arr[], int n)
+{
+
+}
 
 int main()
 {
@@ -33,7 +37,7 @@ int main()
     imprime_arreglo(arreglo);
 
     // invoque su algoritomo de ordenamiento aquí
-
+    burbuja(arreglo, SIZE);
     
     printf("\nArreglo ordenado\n");
     imprime_arreglo(arreglo);
