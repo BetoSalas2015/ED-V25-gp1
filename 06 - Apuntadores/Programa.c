@@ -5,38 +5,52 @@
 #define cls system("cls")
 #define limpia_buffer fflush(stdin)
 
+void por_valor(int x)
+{
+    printf("x = %d \n", x);
+    x = 5;
+    printf("x = %d \n", x);
+}
+
+void por_referencia(int *x)
+{
+    printf("x = %d \n", *x);
+    *x = 5;
+    printf("x = %d \n", *x);
+}
+
 int main()
 {
-    /*int costo = 60;
-    int *pointer; 
+    int costo = 60;
 
-    pointer = &costo;           //  Se crea un alias
+    printf("Costo = %d\n", costo);
+    por_valor(costo);
+    printf("Costo = %d\n", costo);
+    por_referencia(&costo);
+    printf("Costo = %d\n", costo);
 
-    printf("Costo = %d \n", costo);
-    printf("La direccion de memoria de costo es %p\n", &costo);
-    printf("La direccion de memoria de pointer es %p\n", &pointer);
-    printf("La direccion de memoria guardada en pointer es %p\n", pointer);
-    printf("El contenido de memoria guardado pointer es %d\n", *pointer);
+    pausa;
+    return 0;
+}
 
-    *pointer = 100;
+int arreglos()
+{
+    char arreglo[5];
+    char *ptr[5];
 
-    printf("Costo = %d \n", costo);*/
+    printf("La dirección de arreglo[0] es %p\n", &arreglo[0]);
+    printf("La dirección de arreglo[1] es %p\n", &arreglo[1]);
+    printf("La dirección de arreglo[2] es %p\n", &arreglo[2]);
+    printf("La dirección de arreglo[3] es %p\n", &arreglo[3]);
+    printf("La dirección de arreglo[4] es %p\n\n", &arreglo[4]);
 
-    int a, b, c;
-    int *pa, *pb, *pc;
+    ptr[0] = arreglo;      //  Eqivale a  ptr = &arreglo[0]
+    ptr[2] = &arreglo[4];
 
-    pa = &a;
-    pb = &b;
-    pc = &c;
+    printf("La direccion guardada en ptr[0] es %p\n", ptr[0]);
+    printf("La direccion guardada en ptr[2] es %p\n", ptr[2]);
 
-    printf("Dame el primer numero: ");
-    scanf("%d", pa);
-    printf("Dame el Segundo numero: ");
-    scanf("%d", pb);
 
-    *pc = *pa + *pb;
-
-    printf("El resultado es %d\n", *pc);
     pausa;
     return 0;
 }
