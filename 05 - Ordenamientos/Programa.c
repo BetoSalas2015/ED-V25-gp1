@@ -23,6 +23,11 @@ void burbuja(int arr[], int n)
 
 }
 
+void binarioa(int num, int arreglo[])
+{
+
+}
+
 int main()
 {
     int arreglo[SIZE];
@@ -41,6 +46,8 @@ int main()
     
     printf("\nArreglo ordenado\n");
     imprime_arreglo(arreglo);
+
+    binaria(25, arreglo);
 
     pausa;
     return 0;
