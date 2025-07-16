@@ -54,24 +54,19 @@ void insert1(char dato)
     }
     nuevo -> info = dato;       //  Guardamos la información
     nuevo -> sig = NULL;
-    if(raiz == NULL)            //  La lista está vacía?
-    {
-        raiz = nuevo;
-    }
-    else        //  La lista ya no está vacía  
-    {
-        nodo *recorre = raiz;
-        while (recorre -> sig != NULL)
-        {
-            recorre = recorre -> sig;
-        }
-        recorre -> sig = nuevo;
-    }
+
+    nuevo->sig = raiz;
+    raiz = nuevo;           // 
 }
 
 void insertn(char dato, int pos)
 {
     nodo *nuevo = NULL;
+    if (pos == 1)
+    {
+        insert1(dato);
+        return;
+    }
     nuevo = (nodo *) malloc( sizeof(nodo) ); 
     if (nuevo == NULL)      // Hubo memoria disponible?
     {
@@ -86,11 +81,14 @@ void insertn(char dato, int pos)
     }
     else        //  La lista ya no está vacía  
     {
-        nodo *recorre = raiz;
-        while (recorre -> sig != NULL)
+        nodo *recorre = raiz;       // me ubic0 en el primer nodo de la lista
+        int cont = 1;               // este es el primer nodo.
+        while (recorre -> sig != NULL && cont < (pos - 1))
         {
             recorre = recorre -> sig;
+            cont++;
         }
+        nuevo ->sig = recorre->sig;
         recorre -> sig = nuevo;
     }
 }
@@ -116,6 +114,11 @@ int main()
     insert('r');
     insert('t');
     insert('o');
+    insert1('X');
+    insert1('y');
+    insertn('l', 3);
+    insertn('6', 61);
+
 
     imprime_lista();
 
